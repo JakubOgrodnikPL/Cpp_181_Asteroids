@@ -7,7 +7,19 @@
 
 using namespace std;
 
-#include "olcConsoleGameEngine.h"
+#include "olc.h"
+
+class Asteroids : public olc
+{
+public:
+    Asteroids()
+    {
+        m_sAppName = L"Asteroids"
+    }
+
+private:
+
+};
 
 int main()
 {
