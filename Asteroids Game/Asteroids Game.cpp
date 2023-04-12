@@ -19,11 +19,25 @@ public:
 
 private:
 
+protected:
+    virtual bool OnUserCreate()
+    {
+        return true;
+    }
+
+    virtual bool OnUserUpdate(float fElapsedTime)
+    {
+        Fill(0, 0, ScreenWidth(), ScreenHeight(), PIXEL_SOLID, 0);
+        return true;
+    }
 };
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Asteroids game;
+    game.ConstructConsole(160, 100, 8, 8);
+    game.Start();
+    return 0;
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
