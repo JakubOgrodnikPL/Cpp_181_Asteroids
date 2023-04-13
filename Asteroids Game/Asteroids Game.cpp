@@ -18,16 +18,37 @@ public:
     }
 
 private:
+    struct sSpaceObject
+    {
+        float x;
+        float y;
+        float dx;
+        float dy;
+        int nSize;
+    };
+
+    vector<sSpaceObject> vecAsteroids;
+
 
 protected:
     virtual bool OnUserCreate()
     {
+        vecAsteroids.push_back({20.0f, 20.0f,8.0f,-6.0f, (int)16})
+
+
         return true;
     }
 
     virtual bool OnUserUpdate(float fElapsedTime)
     {
         Fill(0, 0, ScreenWidth(), ScreenHeight(), PIXEL_SOLID, 0);
+
+        for (auto& a : vecAsteroids)
+        {
+            a.x += a.dx * fElapseTime;
+            a.y += a.dy * fElapseTime;
+        }
+
         return true;
     }
 };
