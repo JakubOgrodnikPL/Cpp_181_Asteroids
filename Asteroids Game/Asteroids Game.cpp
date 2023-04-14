@@ -47,6 +47,11 @@ protected:
         {
             a.x += a.dx * fElapseTime;
             a.y += a.dy * fElapseTime;
+
+            for (int x = 0; x < a.nSize; i++)
+                for (int y = 0; y < a.nSize; y++)
+                    Draw(a.x + x, a.y + y, PIXEL_QUARTER, FG_RED);
+
         }
 
         return true;
